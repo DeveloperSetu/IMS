@@ -1,0 +1,50 @@
+<div class="col col-md-9 container">
+  <p class="h1 p-3 text-center shadow"><img src="/assets/img/box.png" width="50px" height="44px" alt=""> Product List</p><br>
+  <button mat-raised-button class="p-4" routerLink="/dashbord">      
+    <i class="bi bi-arrow-left-circle-fill" style="color: var(--purpol); font-size: 28px;"></i>
+  </button>
+
+  <a mat-raised-button (click)="openDialog()"  class="p-4 float-end"> 
+  <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/7950F2/plus-2-math.png" alt="plus-2-math"/>
+  Add Product
+  </a><br><br>
+   <table class="table">
+       <thead>
+        <tr class="table-primary">
+          <th>ProductId</th>
+          <th>CategoryId</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+       </thead>
+       <tbody>
+     @for (item of productList; track item.ProductId; let i= $index) {
+             
+           <tr>
+            <td>{{item.ProductId}}</td>
+            <td>{{item.CategoryId}}</td>
+            <td>{{item.ProductName}}</td>
+            <td>{{item.Description}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.Quantity}}</td>
+            <th>
+              <div class="example-button-container">
+                <button mat-mini-fab color="primary"  (click)="openDialog(item.ProductId)"
+                aria-label="Example icon button with a plus one icon">
+                <mat-icon>edit</mat-icon>
+                </button>  
+                <button mat-mini-fab color="warn"  (click)="delete(item.ProductId)"
+                aria-label="Example icon button with a plus one icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </th>
+           </tr>
+
+     }
+       </tbody>
+
+   </table>

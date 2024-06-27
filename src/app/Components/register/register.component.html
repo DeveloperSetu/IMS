@@ -1,0 +1,28 @@
+<div id="loginDiv">
+    <form action="action_page.php" method="post" class="shadow">
+        <div class="imgcontainer">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQIV1ppwChzluddwMfC-9jCDE7uSri4SAqhw&usqp=CAU" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          
+          <label for="uname"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" name="uname" required>
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter User name" name="uname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="passwordIn" required>
+          <input type="checkbox" onclick="passwordSH()"> Show Password
+    
+          <button type="submit">Sign up</button>
+          
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <span class="psw">I have a account <a routerLink="/login">sign in</a></span>
+        </div>
+      </form>
+    </div>
+    
+    

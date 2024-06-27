@@ -1,0 +1,18 @@
+
+    <!----------------------------------------------Content------------------------------------------------------>
+    <div class="container p-4">
+    <h2 mat-dialog-title>
+      <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/7950F2/plus-2-math.png" alt="plus-2-math"/>
+        ADD Category</h2>
+    <form (ngSubmit)="SaveData()" class=" p-2"> 
+      <input hidden [(ngModel)]="category.CategoryId" name="CategoryId">
+        <label>Category Name:</label>
+        <input class="form-control w-60" required  placeholder="Category name" [(ngModel)]="category.CategoryName" name="CategoryName">
+      <br>
+        <label>Category Description:</label>
+        <input class="form-control" required  placeholder="Description" [(ngModel)]="category.Description" name="Description"><br>
+
+      <button class="btn btn-success" type="submit" [disabled]="!category.CategoryName" > {{buttonText}} </button>
+      <button mat-button mat-dialog-close class="btn btn-primary" class="btn btn-danger">Close</button>
+    </form>
+  </div>

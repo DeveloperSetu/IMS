@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <div *ngIf="order">
+      <h2>Order Details</h2>
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text"><strong>Order ID:</strong> {{ order.OrderId }}</p>
+          <p class="card-text"><strong>Customer ID:</strong> {{ order.CustomerId }}</p>
+          <p class="card-text"><strong>Order Date:</strong> {{ order.OrderDate | date: 'shortDate' }}</p>
+          <p class="card-text"><strong>Order Price:</strong> {{ order.TotalPrice | currency }}</p>
+          <p class="card-text"><strong>Is Emergency:</strong> {{ order.IsEmergency }}</p>
+          <p class="card-text"><strong>Delivery Date:</strong> {{ order.DeliveryDate | date: 'shortDate' }}</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Order Details</h3>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Product ID</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detail of order.OrderDetails">
+                <td>{{ detail.PrdId }}</td>
+                <td>{{ detail.Qty }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button class="btn btn-primary mt-3" (click)="goBackToList()">Back to List</button>
+    </div>
+  </div>
+  

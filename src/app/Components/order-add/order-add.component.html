@@ -1,0 +1,52 @@
+
+<div>
+<h2 class="mt-3" *ngIf="isEditMode">Edit Order</h2>
+  <h2 class="mt-3" *ngIf="!isEditMode">Create Order</h2>
+  <form class="mt-3" (ngSubmit)="saveOrder()">
+    <div class="mb-3">
+      <label for="customerId" class="form-label">Customer ID:</label>
+      <input id="customerId" [(ngModel)]="order.CustomerId" name="customerId" class="form-control" type="number" required>
+    </div>
+    <div class="mb-3">
+      <label for="orderDate" class="form-label">Order Date:</label>
+      <input id="orderDate" [(ngModel)]="order.OrderDate" name="orderDate" class="form-control" type="date" required>
+    </div>
+    <div class="mb-3 form-check">
+      <input id="isEmergency" [(ngModel)]="order.IsEmergency" name="isEmergency" class="form-check-input" type="checkbox">
+      <label class="form-check-label" for="isEmergency">Is Emergency</label>
+    </div>
+    <div class="mb-3">
+      <label for="deliveryDate" class="form-label">Delivery Date:</label>
+      <input id="deliveryDate" [(ngModel)]="order.DeliveryDate" name="deliveryDate" class="form-control" type="date" required>
+    </div>
+    
+    <div class="mb-3">
+      <h3>Order Details</h3>
+      <button type="button" class="btn btn-primary" (click)="addOrderDetail()">Add Detail</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detail of order.OrderDetails; let i = index">
+            <td>
+              <input [(ngModel)]="detail.PrdId" name="prdId-{{i}}" class="form-control" type="number" required>
+            </td>
+            <td>
+              <input [(ngModel)]="detail.Qty" name="qty-{{i}}" class="form-control" type="number" required>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="removeOrderDetail(i)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

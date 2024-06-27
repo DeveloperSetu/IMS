@@ -1,0 +1,10 @@
+#card{
+    width: 270px;
+    align-items: center;
+
+}
+#cardContainer{
+    display: grid;
+    align-content: center;
+
+}

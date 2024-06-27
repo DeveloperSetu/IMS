@@ -1,0 +1,42 @@
+<div class="container">
+    <p class="h1 p-3 text-center shadow">Order List</p><br>
+    <button mat-raised-button class="p-4" routerLink="/dashbord">      
+      <i class="bi bi-arrow-left-circle-fill" style="color: var(--purpol); font-size: 28px;"></i>
+    </button>
+  
+    <a mat-raised-button class="p-3 float-end shadow border text-dlack" routerLink="/orderAdd"> 
+    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/7950F2/plus-2-math.png" alt="plus-2-math"/>
+    Add Order
+    </a><br><br>
+      
+<div class="container mt-4">
+  <button class="btn btn-primary mb-3" (click)="createOrder()">Create Order</button>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Order ID</th>
+        <th>Customer ID</th>
+        <th>Order Date</th>
+        <th>Total Price</th>
+        <th>Is Emergency</th>
+        <th>Delivery Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.OrderId }}</td>
+        <td>{{ order.CustomerId }}</td>
+        <td>{{ order.OrderDate | date }}</td>
+        <td>{{ order.TotalPrice | currency }}</td>
+        <td>{{ order.IsEmergency }}</td>
+        <td>{{ order.DeliveryDate | date }}</td>
+        <td>
+          <button class="btn btn-sm btn-info mr-1" (click)="editOrder(order.OrderId)">Edit</button>
+          <button class="btn btn-sm btn-primary" (click)="viewDetails(order.OrderId)">Details</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteOrder(order.OrderId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

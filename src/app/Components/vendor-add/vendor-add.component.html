@@ -1,0 +1,30 @@
+<div class="container p-5">
+<h2 mat-dialog-title>
+  <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/7950F2/plus-2-math.png" alt="plus-2-math"/>
+  Add Vendor Details
+</h2>
+<form (ngSubmit)="SaveData()"> 
+  <input matInput  hidden 
+  [(ngModel)]="vendor.VendorId" class="form-control w-50" name="VendorId">
+
+    <label>Vendor Name</label>
+    <input matInput  placeholder="Vendor name" 
+    [(ngModel)]="vendor.VendorName" class="form-control w-50" name="VendorName">
+
+  <br>
+
+    <label>Vendor Contact</label>
+    <input matInput  placeholder="VendorContact" class="form-control w-50"
+    [(ngModel)]="vendor.VendorContact" name="VendorContact">
+  <br>
+
+  <mat-label>VendorAddress</mat-label>
+    <input matInput  placeholder="VendorAddress" class="form-control w-50"
+    [(ngModel)]="vendor.VendorAddress" name="VendorAddress">
+
+<mat-dialog-actions>
+  <button type="submit" class="btn btn-success" [disabled]="!vendor.VendorName && !vendor.VendorContact" > {{buttonText}} </button>
+  <button  mat-dialog-close class="btn btn-danger"  >Close</button>
+</mat-dialog-actions>
+</form>
+</div>

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary: #1e90ff;
+    --white: #ffffff;
+    --skyblue:#0AB3D9;
+    --purpol:#6e2cf3;
+    --shdow:rgba(0,0,0,0.4);;
+  }
+
+/* color= #0AB3D9 #6e2cf3 */
+
+a{
+  text-decoration: none;
+}
+thead{
+  background: var(--primary);
+}
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

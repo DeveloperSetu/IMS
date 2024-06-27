@@ -1,0 +1,9 @@
+/* -------------------------------------------------Nav------------------------------------- */
+#nav,nav{
+    background: var(--primary);
+    color: white;
+}
+nav li a{
+    color: white;
+    list-style: none;
+}

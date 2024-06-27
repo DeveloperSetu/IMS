@@ -1,0 +1,47 @@
+<h2 mat-dialog-title class="text-center pt-4">
+    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/7950F2/plus-2-math.png" alt="plus-2-math"/>
+    Add Product     
+    <img src="/assets/img/add.png" width="40px" height="34px" alt="">
+</h2><hr>
+<form class="p-5" (ngSubmit)="saveData()">
+     <div class="row">
+        
+        <div class="col col-md-6">
+            <label>Category Id</label>
+            <input type="number" [(ngModel)]="product.CategoryId" name="CategoryId" class="form-control">
+        </div>
+
+        <div class="col col-md-6">
+            <label>Product Name</label>
+            <input type="text" [(ngModel)]="product.ProductName" name="ProductName" class="form-control">
+        </div>
+
+        <div class="col col-md-6">
+            <label>Product Description</label>
+            <input type="text" [(ngModel)]="product.Description" name="Description" class="form-control">
+        </div>
+        <div class="col col-md-6">
+            <label>Price</label>
+            <input type="number" [(ngModel)]="product.Price" name="Price" class="form-control">
+        </div>
+
+        <div class="col col-md-6">
+            <label>Quantity</label>
+            <input type="Quantity" [(ngModel)]="product.Quantity" name="Quantity" class="form-control">
+        </div>
+
+        <div class="col col-md-6">
+            <label>ReorderQty</label>
+            <input type="Quantity" [(ngModel)]="product.ReorderQty" name="ReorderQty" class="form-control">
+        </div>
+
+
+        <div class="col col-md-12">
+            <input type="number" hidden [(ngModel)]="product.ProductId" name="ProductId" class="form-control">
+        </div>
+        <div class="col col-md-6">
+            <input type="submit" value="Submit" [disabled]="!product.ProductName" class="btn btn-success mt-4 ml-2 ">
+            <input type="submit" mat-button mat-dialog-close value="Close" class="btn btn-primary mt-4 ml-2">
+        </div>
+     </div>
+</form>

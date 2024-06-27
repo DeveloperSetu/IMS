@@ -1,0 +1,9 @@
+#section1{
+    width: 100%;
+}
+#section1_leftDiv{
+    background: var(--primary);
+    float: left;
+    margin-top: -20px;
+    padding: 20px;
+}
