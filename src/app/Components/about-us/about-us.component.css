@@ -131,4 +131,9 @@ nav{
     animation: animatezoom 0.6s
   }
   
- 
+ /* UpArrow */
+ #upArrow{
+  position: fixed;
+  top: 90%;
+  right: 2%;
+}

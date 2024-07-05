@@ -8,3 +8,9 @@
     align-content: center;
 
 }
+
+#upArrow{
+    position: fixed;
+    top: 90%;
+    right: 2%;
+}
